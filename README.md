@@ -1,17 +1,14 @@
 # TANIA POWER FUCK
 
-App web per iPhone e Mac (Safari).
-Database bull + stelle 1-5 + calendario anti-sovrapposizione.
+App iPhone/Mac. Non è una chat.
 
-## Apri ora
+## Se il link CDN non si apre
 
-- App: https://htmlpreview.github.io/?https://github.com/italianlord/tania-pf/blob/main/index.html
-- File: https://github.com/italianlord/tania-pf/blob/main/index.html
+1. Scarica: https://github.com/italianlord/tania-pf/archive/refs/heads/main.zip
+2. Doppio click sullo zip
+3. Doppio click su `index.html`
+4. Si apre Safari. Premi «Ho 18+ anni — entra».
 
-## Mac
-1. Apri il link in Safari (non Chrome).
-2. File → Aggiungi al Dock.
+## Link web
 
-## iPhone
-1. Apri lo stesso link in Safari.
-2. Condividi → Aggiungi alla schermata Home.
+https://cdn.jsdelivr.net/gh/italianlord/tania-pf@main/index.html
