@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="TPF"/>
+<meta name="theme-color" content="#0a0a0c"/>
+<title>TANIA POWER FUCK</title>
+<style>
+:root{--bg:#0a0a0c;--card:#15151a;--line:#2a2a32;--red:#d31848;--red2:#ff4d73;--txt:#f4f0ea;--dim:#9a948c;--ok:#3dd68c;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font:16px/1.35 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#app{max-width:430px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
+@media(min-width:900px){#app{max-width:980px;min-height:100vh}.desk{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}}
+header.app{padding:18px 16px 8px;position:sticky;top:0;background:linear-gradient(#0a0a0c,rgba(10,10,12,.92));z-index:5}
+header.app h1{margin:0;font-size:13px;letter-spacing:.18em;color:var(--red2)}
+header.app p{margin:4px 0 0;font-size:22px;font-weight:700}
+.tabs{display:flex;gap:8px;padding:0 16px 12px}
+.tabs button{flex:1;border:0;border-radius:999px;padding:10px;background:#1b1b22;color:var(--dim);font-weight:650}
+.tabs button.on{background:var(--red);color:#fff}
+.page{display:none;padding:0 16px 96px;flex:1}
+.page.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;margin:0 0 10px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;color:inherit}
+.av{width:58px;height:58px;border-radius:16px;flex:none;display:grid;place-items:center;font-weight:800;color:#fff;font-size:18px}
+.meta{font-size:12px;color:var(--dim)}
+.stars{color:var(--red2);letter-spacing:1px;font-size:14px}
+.chip{display:inline-block;margin:2px 4px 0 0;padding:3px 8px;border-radius:999px;background:#24242c;font-size:11px;color:#ddd}
+.search{width:100%;margin:0 0 12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:#111;color:var(--txt)}
+.btn{border:0;border-radius:14px;padding:12px 14px;font-weight:700;background:var(--red);color:#fff}
+.btn.g{background:#23232b;color:var(--txt)}
+.row{display:flex;gap:8px;margin-top:10px}
+.row>*{flex:1}
+label{display:block;font-size:12px;color:var(--dim);margin:10px 0 4px}
+input,select,textarea{width:100%;padding:11px;border-radius:12px;border:1px solid var(--line);background:#111;color:var(--txt)}
+.banner{padding:10px 12px;border-radius:12px;background:#231016;color:#ff8aa3;margin:8px 0;display:none}
+.banner.on{display:block}
+.banner.ok{background:#102318;color:var(--ok)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal b,.cal i{display:grid;place-items:center;height:36px;font-style:normal;font-size:12px;color:var(--dim)}
+.cal span{display:grid;place-items:center;height:36px;border-radius:10px;background:#16161c;font-size:13px}
+.cal span.busy{background:#3a1020;color:var(--red2);font-weight:700}
+.cal span.today{outline:1px solid var(--red2)}
+.navm{display:flex;align-items:center;justify-content:space-between;margin:6px 0 10px}
+#gate{position:fixed;inset:0;background:#09090b;z-index:20;display:flex;align-items:center;justify-content:center;padding:24px}
+#gate .box{max-width:360px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+#gate h2{margin:0 0 8px}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="box">
+    <h2>TANIA POWER FUCK</h2>
+    <p class="meta">App 18+ per iPhone e Mac. Database bull, stelle, calendario senza sovrapposizioni.</p>
+    <div class="row"><button class="btn" id="enter">Ho 18+ anni — entra</button></div>
+  </div>
+</div>
+<div id="app">
+  <header class="app">
+    <h1>TANIA POWER FUCK</h1>
+    <p id="htitle">Roster bull</p>
+  </header>
+  <div class="tabs">
+    <button class="on" data-tab="bulls">Bull</button>
+    <button data-tab="cal">Calendario</button>
+    <button data-tab="add">Nuovo</button>
+  </div>
+  <div id="msg" class="banner"></div>
+  <section class="page on" id="bulls">
+    <input class="search" id="q" placeholder="Cerca nome, città, specialità"/>
+    <div id="list"></div>
+  </section>
+  <section class="page" id="cal">
+    <div class="navm"><button class="btn g" id="prev">‹</button><b id="mtitle"></b><button class="btn g" id="next">›</button></div>
+    <div class="cal" id="grid"></div>
+    <h3>Agenda</h3>
+    <div id="agenda"></div>
+  </section>
+  <section class="page" id="add">
+    <label>Nome</label><input id="n_name"/>
+    <label>Età</label><input id="n_age" type="number"/>
+    <label>Città</label><input id="n_city"/>
+    <label>Altezza cm</label><input id="n_h" type="number"/>
+    <label>Fisico</label><input id="n_build"/>
+    <label>Misura cm</label><input id="n_cm" type="number"/>
+    <label>Specialità (virgola)</label><input id="n_spec"/>
+    <div class="row"><button class="btn" id="saveb">Salva bull</button></div>
+  </section>
+  <section class="page" id="detail"></section>
+</div>
+<script>
+const K='tpf-v1';
+const SEED=[
+ {id:'m1',name:'Marco Bellini',age:34,city:'Milano',h:188,build:'atletico',cm:19,spec:['power fuck','throat','standing'],rating:0},
+ {id:'m2',name:'Diego Rivas',age:31,city:'Bergamo',h:182,build:'muscolare',cm:20,spec:['marathon','prone bone','creampie'],rating:0},
+ {id:'m3',name:'Luca Ferré',age:38,city:'Bologna',h:190,build:'slanciato',cm:21,spec:['dirty talk','hair pull','overstim'],rating:0},
+ {id:'m4',name:'Hassan K.',age:29,city:'Torino',h:185,build:'cut',cm:18,spec:['edging','oral lungo','body worship'],rating:0},
+ {id:'m5',name:'Nico Moretti',age:27,city:'Roma',h:178,build:'lean',cm:17,spec:['face-down','toys + cazzo','round 2'],rating:0},
+ {id:'m6',name:'Andrei V.',age:36,city:'Padova',h:193,build:'powerlifter',cm:22,spec:['mating press','deep','holding down'],rating:0},
+ {id:'m7',name:'Samuele Costa',age:41,city:'Firenze',h:183,build:'dad-bod',cm:18,spec:['pussy focus','slow then wreck'],rating:0},
+ {id:'m8',name:'Jules M.',age:33,city:'Milano',h:180,build:'elegante',cm:19,spec:['role switch','raw','hotel only'],rating:0}
+];
+const COL=['#d31848','#8b1e3f','#c45c26','#2f6f4e','#2b4c7e','#6b2d8b','#8a6a12','#3d3d48'];
+let db=load(), view=new Date(), openId=null;
+function load(){
+  try{
+    const x=JSON.parse(localStorage.getItem(K));
+    if(x&&x.bulls) return x;
+  }catch(e){}
+  return {bulls:SEED.map(b=>({...b})), appts:[]};
+}
+function save(){localStorage.setItem(K,JSON.stringify(db))}
+function stars(n){n=+n||0;return '★'.repeat(n)+'☆'.repeat(5-n)}
+function toast(t,ok){const el=document.getElementById('msg');el.textContent=t;el.className='banner on'+(ok?' ok':'');clearTimeout(toast._t);toast._t=setTimeout(()=>el.className='banner',3500)}
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===id));
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===id));
+  document.getElementById('htitle').textContent=id==='cal'?'Calendario':id==='add'?'Nuovo bull':id==='detail'?'Scheda':'Roster bull';
+}
+function av(b){const i=Math.abs([...b.id].reduce((a,c)=>a+c.charCodeAt(0),0))%COL.length;return `<div class="av" style="background:${COL[i]}">${b.name.split(' ').map(x=>x[0]).join('').slice(0,2)}</div>`}
+function renderList(){
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  const rows=db.bulls.filter(b=> (b.name+' '+b.city+' '+(b.spec||[]).join(' ')).toLowerCase().includes(q));
+  document.getElementById('list').innerHTML=rows.map(b=>`
+    <button class="card" onclick="openBull('${b.id}')">
+      ${av(b)}
+      <div>
+        <b>${b.name}</b> <span class="stars">${stars(b.rating)}</span>
+        <div class="meta">${b.age} · ${b.city} · ${b.h}cm · ${b.build} · ${b.cm}cm</div>
+        <div>${(b.spec||[]).map(s=>`<span class="chip">${s}</span>`).join('')}</div>
+      </div>
+    </button>`).join('')||'<p class="meta">Nessun bull.</p>';
+}
+function openBull(id){
+  openId=id; const b=db.bulls.find(x=>x.id===id); if(!b) return;
+  const mine=db.appts.filter(a=>a.bullId===id).sort((a,c)=>a.start-c.start);
+  document.getElementById('detail').innerHTML=`
+    <div class="card" style="display:block">
+      <div style="display:flex;gap:12px;align-items:center">${av(b)}<div><b style="font-size:20px">${b.name}</b><div class="meta">${b.age} anni · ${b.city}</div></div></div>
+      <div class="meta" style="margin-top:8px">${b.h} cm · ${b.build} · ${b.cm} cm</div>
+      <div>${(b.spec||[]).map(s=>`<span class="chip">${s}</span>`).join('')}</div>
+      <label>Stelle</label>
+      <div class="row">${[1,2,3,4,5].map(n=>`<button class="btn ${b.rating===n?'':'g'}" onclick="rate('${id}',${n})">${n}★</button>`).join('')}</div>
+      <label>Quando</label><input id="d_when" type="datetime-local"/>
+      <label>Durata</label>
+      <select id="d_dur"><option value="60">60 min</option><option value="90" selected>90 min</option><option value="120">2 ore</option><option value="180">3 ore</option></select>
+      <label>Luogo</label><input id="d_place" placeholder="casa, hotel..."/>
+      <div class="row"><button class="btn" onclick="book('${id}')">Prenota</button><button class="btn g" onclick="show('bulls')">Indietro</button></div>
+      <h3>Suoi slot</h3>
+      ${mine.map(a=>`<div class="card" style="display:block"><div>${fmt(a.start)} → ${fmt(a.end)}</div><div class="meta">${a.place||''}</div><button class="btn g" onclick="delAp('${a.id}')">Cancella</button></div>`).join('')||'<p class="meta">Nessuna prenotazione.</p>'}
+    </div>`;
+  show('detail');
+}
+function rate(id,n){const b=db.bulls.find(x=>x.id===id); if(!b) return; b.rating=n; save(); openBull(id); renderList(); toast(b.name+': '+stars(n),true)}
+function overlap(s,e,skip){
+  return db.appts.find(a=>a.id!==skip && s<a.end && a.start<e);
+}
+function book(id){
+  const when=document.getElementById('d_when').value;
+  const dur=+document.getElementById('d_dur').value;
+  const place=document.getElementById('d_place').value.trim();
+  if(!when) return toast('Scegli data e ora');
+  const start=new Date(when).getTime();
+  const end=start+dur*60000;
+  const hit=overlap(start,end);
+  if(hit){
+    const other=db.bulls.find(b=>b.id===hit.bullId);
+    return toast('Occupata: '+ (other?other.name:'altro slot')+' '+fmt(hit.start)+'–'+fmt(hit.end));
+  }
+  db.appts.push({id:'a'+Date.now(),bullId:id,start,end,place});
+  save(); openBull(id); renderCal(); toast('Prenotato',true);
+}
+function delAp(id){db.appts=db.appts.filter(a=>a.id!==id); save(); if(openId) openBull(openId); renderCal(); toast('Cancellato',true)}
+function fmt(t){const d=new Date(t); return d.toLocaleString('it-IT',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}
+function renderCal(){
+  const y=view.getFullYear(), m=view.getMonth();
+  document.getElementById('mtitle').textContent=view.toLocaleString('it-IT',{month:'long',year:'numeric'});
+  const first=new Date(y,m,1).getDay(); const startOff=(first+6)%7; const days=new Date(y,m+1,0).getDate();
+  const names=['L','M','M','G','V','S','D'];
+  let html=names.map(n=>`<b>${n}</b>`).join('');
+  for(let i=0;i<startOff;i++) html+='<i></i>';
+  const today=new Date(); today.setHours(0,0,0,0);
+  for(let d=1;d<=days;d++){
+    const day=new Date(y,m,d).getTime();
+    const next=day+86400000;
+    const busy=db.appts.some(a=>a.start<next && a.end>day);
+    const isT=day===today.getTime();
+    html+=`<span class="${busy?'busy':''} ${isT?'today':''}">${d}</span>`;
+  }
+  document.getElementById('grid').innerHTML=html;
+  const up=db.appts.slice().sort((a,b)=>a.start-b.start);
+  document.getElementById('agenda').innerHTML=up.map(a=>{
+    const b=db.bulls.find(x=>x.id===a.bullId);
+    return `<div class="card"><div><b>${b?b.name:'?'}</b><div class="meta">${fmt(a.start)} → ${fmt(a.end)} · ${a.place||'—'}</div></div><button class="btn g" onclick="delAp('${a.id}')">x</button></div>`;
+  }).join('')||'<p class="meta">Nessuno slot.</p>';
+}
+function addBull(){
+  const name=document.getElementById('n_name').value.trim();
+  if(!name) return toast('Serve il nome');
+  db.bulls.unshift({id:'c'+Date.now(),name,age:+document.getElementById('n_age').value||0,city:document.getElementById('n_city').value.trim(),h:+document.getElementById('n_h').value||0,build:document.getElementById('n_build').value.trim(),cm:+document.getElementById('n_cm').value||0,spec:document.getElementById('n_spec').value.split(',').map(s=>s.trim()).filter(Boolean),rating:0});
+  save(); ['n_name','n_age','n_city','n_h','n_build','n_cm','n_spec'].forEach(id=>document.getElementById(id).value='');
+  renderList(); show('bulls'); toast('Bull salvato',true);
+}
+document.getElementById('enter').onclick=()=>{document.getElementById('gate').style.display='none'; renderList(); renderCal();};
+document.getElementById('q').oninput=renderList;
+document.getElementById('saveb').onclick=addBull;
+document.getElementById('prev').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1); renderCal();};
+document.getElementById('next').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1); renderCal();};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{ if(b.dataset.tab==='detail') return; show(b.dataset.tab); if(b.dataset.tab==='cal') renderCal(); if(b.dataset.tab==='bulls') renderList(); });
+</script>
+</body>
+</html>
